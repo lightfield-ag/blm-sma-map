@@ -12,8 +12,14 @@
       "type": "vector"
     },
     "terrain-rgb-v2": {
-      "url": "https://api.maptiler.com/tiles/terrain-rgb-v2/tiles.json?key=NzxHDluOAR0TNQ2VJpdr",
-      "type": "raster-dem"
+      "type": "raster-dem",
+      "tiles": [
+        "https://tiles.lightfield.ag/terrarium-z12-simplified/{z}/{x}/{y}.png"
+      ],
+      "minzoom": 0,
+      "maxzoom": 12,
+      "tileSize": 256,
+      "encoding": "terrarium"
     }
   },
   "sprite": "https://api.maptiler.com/maps/7f81d53f-6bc3-46dd-be8b-8d46bea2a0e0/sprite",
@@ -34,7 +40,7 @@
       "layout": {},
       "paint": {
         "hillshade-shadow-color": "hsl(0, 0%, 0%)",
-        "hillshade-exaggeration": 0.5
+        "hillshade-exaggeration": 0.35
       }
     },
     {
