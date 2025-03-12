@@ -22,8 +22,8 @@
       "encoding": "terrarium"
     }
   },
-  "sprite": "https://api.maptiler.com/maps/7f81d53f-6bc3-46dd-be8b-8d46bea2a0e0/sprite",
-  "glyphs": "https://api.maptiler.com/fonts/{fontstack}/{range}.pbf?key=NzxHDluOAR0TNQ2VJpdr",
+  "sprite": "https://lightfield-ag.github.io/basemap-assets/sprites/sprite",
+  "glyphs": "https://lightfield-ag.github.io/basemap-assets/fonts/{fontstack}/{range}.pbf",
   "layers": [
     {
       "id": "Background",
