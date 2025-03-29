@@ -30,7 +30,7 @@ def _(Layer, json, leafmap):
     m = leafmap.Map(
         center=(-98.5795,39.8283),  # Center of the US
         zoom=3,                     # Initial zoom level
-        max_zoom=10,
+        max_zoom=9,
         height='600px',                            
         style=style_spec
     )
@@ -40,7 +40,7 @@ def _(Layer, json, leafmap):
         'type' : 'vector',
         'tiles' : ['https://tiles.lightfield.ag/blm_national_surface_management_data/{z}/{x}/{y}.mvt'],
         'minzoom' : 0,
-        'maxzoom' : 10
+        'maxzoom' : 9
     }
     m.add_source('blm-sma-source', blm_sma_source)
 
