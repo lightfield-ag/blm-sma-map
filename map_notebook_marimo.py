@@ -10,7 +10,7 @@
 
 import marimo
 
-__generated_with = "0.11.31"
+__generated_with = "0.12.2"
 app = marimo.App(width="medium")
 
 
@@ -98,6 +98,11 @@ def _(Layer, json, leafmap):
         paint,
         style_spec,
     )
+
+
+@app.cell
+def _():
+    return
 
 
 if __name__ == "__main__":
