@@ -2,15 +2,14 @@
 # requires-python = ">=3.11"
 # dependencies = [
 #     "geopandas==1.0.1",
-#     "leafmap==0.42.13",
-#     "maplibre==0.2.8",
+#     "leafmap[maplibre]==0.43.6",
 #     "marimo",
 # ]
 # ///
 
 import marimo
 
-__generated_with = "0.12.2"
+__generated_with = "0.13.2"
 app = marimo.App(width="medium")
 
 
@@ -30,6 +29,7 @@ def _(Layer, json, leafmap):
     m = leafmap.Map(
         center=(-98.5795,39.8283),  # Center of the US
         zoom=3,                     # Initial zoom level
+        min_zoom=2,
         max_zoom=9,
         height='600px',                            
         style=style_spec
@@ -38,8 +38,8 @@ def _(Layer, json, leafmap):
     # Link to BLM national surface management agency data on AWS S3
     blm_sma_source = {
         'type' : 'vector',
-        'tiles' : ['https://tiles.lightfield.ag/blm_national_surface_management_data/{z}/{x}/{y}.mvt'],
-        'minzoom' : 0,
+        'tiles' : ['https://tiles.lightfield.ag/blm_national_surface_management_data_z9_D10/{z}/{x}/{y}.mvt'],
+        'minzoom' : 2,
         'maxzoom' : 9
     }
     m.add_source('blm-sma-source', blm_sma_source)
@@ -88,20 +88,12 @@ def _(Layer, json, leafmap):
     m.add_legend('Land Management',legend_dict=legend_dict, position="top-left")
 
     m
-    return (
-        blm_layer,
-        blm_sma_source,
-        f,
-        image,
-        legend_dict,
-        m,
-        paint,
-        style_spec,
-    )
+    return (m,)
 
 
 @app.cell
-def _():
+def _(m):
+    m.to_html('index_stage_marimo.html',title='BLM Surface Management Agency Layer',overwrite=True)
     return
 
 
