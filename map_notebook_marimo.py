@@ -2,14 +2,14 @@
 # requires-python = ">=3.11"
 # dependencies = [
 #     "geopandas==1.0.1",
-#     "leafmap[maplibre]==0.43.6",
+#     "leafmap[maplibre]==0.43.11",
 #     "marimo",
 # ]
 # ///
 
 import marimo
 
-__generated_with = "0.13.2"
+__generated_with = "0.13.4"
 app = marimo.App(width="medium")
 
 
@@ -32,7 +32,8 @@ def _(Layer, json, leafmap):
         min_zoom=2,
         max_zoom=9,
         height='600px',                            
-        style=style_spec
+        style=style_spec,
+        use_message_queue=True
     )
 
     # Link to BLM national surface management agency data on AWS S3
@@ -93,7 +94,7 @@ def _(Layer, json, leafmap):
 
 @app.cell
 def _(m):
-    m.to_html('index_stage_marimo.html',title='BLM Surface Management Agency Layer',overwrite=True)
+    m.to_html('index_stage.html',title='BLM Surface Management Agency Layer',overwrite=True)
     return
 
 
