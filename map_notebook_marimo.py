@@ -9,7 +9,7 @@
 
 import marimo
 
-__generated_with = "0.13.4"
+__generated_with = "0.13.9"
 app = marimo.App(width="medium")
 
 
@@ -39,7 +39,7 @@ def _(Layer, json, leafmap):
     # Link to BLM national surface management agency data on AWS S3
     blm_sma_source = {
         'type' : 'vector',
-        'tiles' : ['https://tiles.lightfield.ag/blm_national_surface_management_data_z9_D10/{z}/{x}/{y}.mvt'],
+        'tiles' : ['https://tiles.lightfield.ag/blm_national_surface_management_data_z9_D11/{z}/{x}/{y}.mvt'],
         'minzoom' : 2,
         'maxzoom' : 9
     }
