@@ -73,7 +73,7 @@ def _(Layer, json, leafmap):
     m.add_layer(blm_layer, before_id='Terrain RGB')
 
     image = "LightField Logo.png"
-    m.add_image(image=image, position="top-left", height='50px')
+    m.add_image(image=image, position="bottom-left", height='50px')
 
     legend_dict = {
         'Private': 'f6b0a9',
