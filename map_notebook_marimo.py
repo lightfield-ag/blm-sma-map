@@ -9,7 +9,7 @@
 
 import marimo
 
-__generated_with = "0.13.9"
+__generated_with = "0.19.7"
 app = marimo.App(width="medium")
 
 
@@ -72,7 +72,7 @@ def _(Layer, json, leafmap):
     )
     m.add_layer(blm_layer, before_id='Terrain RGB')
 
-    image = "LightField Combination Mark.png"
+    image = "LightField Logo.png"
     m.add_image(image=image, position="top-left", height='50px')
 
     legend_dict = {
