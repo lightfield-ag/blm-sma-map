@@ -9,7 +9,7 @@
 
 import marimo
 
-__generated_with = "0.19.7"
+__generated_with = "0.23.2"
 app = marimo.App(width="medium")
 
 
@@ -18,6 +18,7 @@ def _():
     import json
     import leafmap.maplibregl as leafmap
     from leafmap.maplibregl import Layer
+
     return Layer, json, leafmap
 
 
@@ -70,7 +71,19 @@ def _(Layer, json, leafmap):
         source_layer='blm_national_surface_management_data',
         paint=paint
     )
-    m.add_layer(blm_layer, before_id='Terrain RGB')
+    m.add_layer(blm_layer, before_id='Residential')
+
+    # Add the Copernicus GLO-30 hillshade raster tile layer
+    # Recall that due to the variable opacity within this layer, blending with the underlying
+    # data layer results naturally, as long as this layer is placed on top of the data layer.
+    m.add_tile_layer(
+        url="https://tiles.lightfield.ag/hillshade_tiles_planet_z11_webp/{z}/{x}/{y}.webp",
+        before_id='Residential',
+        paint={
+            "raster-fade-duration": 0,       # Remove default 300 ms fade duration
+            "raster-resampling": "nearest",  # Use nearest neighbor instead of linear
+        }
+    )
 
     image = "LightField Logo.png"
     m.add_image(image=image, position="bottom-left", height='50px')

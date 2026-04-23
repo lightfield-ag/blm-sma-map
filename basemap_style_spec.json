@@ -10,16 +10,6 @@
     "openmaptiles": {
       "url": "https://tiles.lightfield.ag/planet-06-30-23-osm-maxzoom-12.json",
       "type": "vector"
-    },
-    "terrain-rgb-v2": {
-      "type": "raster-dem",
-      "tiles": [
-        "https://tiles.lightfield.ag/terrarium-z12-simplified/{z}/{x}/{y}.png"
-      ],
-      "minzoom": 0,
-      "maxzoom": 12,
-      "tileSize": 256,
-      "encoding": "terrarium"
     }
   },
   "sprite": "https://lightfield-ag.github.io/basemap-assets/sprites/sprite",
@@ -30,18 +20,6 @@
       "type": "background",
       "layout": {"visibility": "visible"},
       "paint": {"background-color": "hsl(0, 0%, 100%)"}
-    },
-    {
-      "id": "Terrain RGB",
-      "type": "hillshade",
-      "source": "terrain-rgb-v2",
-      "minzoom": 0,
-      "maxzoom": 22,
-      "layout": {},
-      "paint": {
-        "hillshade-shadow-color": "hsl(0, 0%, 0%)",
-        "hillshade-exaggeration": 0.35
-      }
     },
     {
       "id": "Residential",
