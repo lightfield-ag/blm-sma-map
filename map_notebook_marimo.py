@@ -34,7 +34,14 @@ def _(Layer, json, leafmap):
         max_zoom=9,
         height='600px',                            
         style=style_spec,
-        use_message_queue=True
+        use_message_queue=True,     # Needed to export HTML
+        hash=True,
+        controls={
+            "geolocate": "top-right",
+            "navigation": "top-right",
+            "fullscreen": "top-right", 
+            "scale": "bottom-left"
+        }
     )
 
     # Link to BLM national surface management agency data on AWS S3
@@ -77,7 +84,7 @@ def _(Layer, json, leafmap):
     # Recall that due to the variable opacity within this layer, blending with the underlying
     # data layer results naturally, as long as this layer is placed on top of the data layer.
     m.add_tile_layer(
-        url="https://tiles.lightfield.ag/hillshade_tiles_planet_z11_webp/{z}/{x}/{y}.webp",
+        url="https://tiles.lightfield.ag/hillshade_tiles_planet_z12_webp/{z}/{x}/{y}.webp",
         before_id='Residential',
         paint={
             "raster-fade-duration": 0,       # Remove default 300 ms fade duration
@@ -100,6 +107,8 @@ def _(Layer, json, leafmap):
         'Undetermined': 'e4e4e4'
     }
     m.add_legend('Land Management',legend_dict=legend_dict, position="top-left")
+
+    #m.add_globe_control(position="top-right")
 
     m
     return (m,)
