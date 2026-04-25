@@ -12,8 +12,8 @@
       "type": "vector"
     }
   },
-  "sprite": "https://lightfield-ag.github.io/basemap-assets/sprites/sprite",
-  "glyphs": "https://lightfield-ag.github.io/basemap-assets/fonts/{fontstack}/{range}.pbf",
+  "sprite": "https://lightfield-earth.github.io/basemap-assets/sprites/sprite",
+  "glyphs": "https://lightfield-earth.github.io/basemap-assets/fonts/{fontstack}/{range}.pbf",
   "layers": [
     {
       "id": "Background",
